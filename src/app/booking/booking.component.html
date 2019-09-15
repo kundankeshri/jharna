@@ -1,0 +1,33 @@
+<div class="row" style='margin-left: -19%;'>
+    <div class="col-sm-3">
+        <div class="card" style="width:350px">
+            <img class="card-img-top" src="../../assets/user.jpg" style="width: 100%;" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">{{userName}} ({{userRole}})</h4>
+                <p class="card-text">
+                    <strong>Phone: </strong>{{phNumber}}<br>
+                    <strong>Email: </strong>{{email}}<br>
+                </p>
+                <br><br>
+            </div>
+        </div><br><br>
+    </div>
+    <div class="col-sm-9">
+      <h1 style="margin-left: 3%;    font-size: 21px;"> To book click on avaliable and to surrender click blocked. </h1>
+  <table class="table table-bordered " style="margin-left: 3%;">
+   <tbody>
+     <tr *ngFor= "let t of userDetails.slots;let i = index">
+       <td *ngIf = 't.row[0].status === false' style='background-color: green;cursor: pointer;'(click)="bookSlot(t.row[0].name,i)">{{t.row[0].name +"(Available)"}}</td>
+       <td *ngIf = 't.row[0].status === true' style='background-color: grey;cursor: pointer;' (click)="surrenderSlot(t.row[0].name,i)">{{t.row[0].name +"(Blocked)"}}</td>
+       <td *ngIf = 't.row[1].status === false' style='background-color: green;cursor: pointer;' (click)="bookSlot(t.row[1].name,i)">{{t.row[1].name +"(Available)"}}</td>
+       <td *ngIf = 't.row[1].status === true' style='background-color: grey;cursor: pointer;'(click)="surrenderSlot(t.row[1].name,i)">{{t.row[1].name +"(Blocked)"}}</td>
+       <td *ngIf = 't.row[2].status === false' style='background-color: green;cursor: pointer;' (click)="bookSlot(t.row[2].name,i)">{{t.row[2].name +"(Available)"}}</td>
+       <td *ngIf = 't.row[2].status === true' style='background-color: grey;cursor: pointer;' (click)="surrenderSlot(t.row[2].name,i)">{{t.row[2].name+"(Blocked)"}}</td>
+       <td *ngIf = 't.row[3].status === false' style='background-color: green;cursor: pointer;' (click)="bookSlot(t.row[3].name,i)">{{t.row[3].name +"(Available)"}}</td>
+       <td *ngIf = 't.row[3].status === true' style='background-color: grey;cursor: pointer;' (click)="surrenderSlot(t.row[3].name,i)">{{t.row[3].name +"(Blocked)"}}</td>
+     </tr>
+   </tbody>
+ </table>
+
+    </div>
+    </div>
